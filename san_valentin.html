@@ -10,14 +10,19 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             padding: 50px;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
         }
         h1 {
             color: #e63946;
             font-size: 2.5em;
+            margin-bottom: 20px;
         }
         p {
             color: #6d6875;
             font-size: 1.2em;
+            margin: 20px 0;
         }
         .btn {
             background-color: #ff6b6b;
@@ -62,6 +67,20 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
+        /* Ajustes responsivos */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            .btn {
+                font-size: 1em;
+                padding: 12px 25px;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -88,7 +107,7 @@
             alert(mensaje);
         }
 
-        // Generar corazones flotantes
+        // Generar corazones flotantes con mayor intervalo de tiempo
         setInterval(() => {
             const heart = document.createElement('div');
             heart.classList.add('heart');
@@ -98,7 +117,7 @@
             document.getElementById('hearts').appendChild(heart);
 
             setTimeout(() => heart.remove(), 5000);
-        }, 500);
+        }, 1000);  // Aumenté el intervalo a 1000ms (1 segundo)
     </script>
 </body>
 </html>
